@@ -1,0 +1,21 @@
+@import 'sass/variables';
+@import 'sass/reset';
+@import 'sass/spacing';
+@import 'sass/antd';
+
+header {
+  background: $color-primary;
+  background: linear-gradient(
+    132deg,
+    darken($color-primary, 10%) 0%,
+    lighten($color-primary, 10%) 100%
+  );
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+@import 'sass/search';

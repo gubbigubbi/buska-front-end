@@ -9,6 +9,7 @@ $sizes: (
   ('sm', 0.5),
   ('md', 1),
   ('lg', 2),
+  ('llg', 3),
   ('xl', 4),
   ('xxl', 8)
 );
@@ -37,4 +38,12 @@ $positions: (('t', 'top'), ('r', 'right'), ('b', 'bottom'), ('l', 'left'));
       padding-#{$posValue}: sizeValue($sizeKey, $sizeValue);
     }
   }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }

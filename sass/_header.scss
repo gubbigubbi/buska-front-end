@@ -1,0 +1,40 @@
+body {
+  background: #ebeff4;
+}
+
+header {
+  background: $color-primary;
+  background: linear-gradient(45deg, #6078ff, #8660fe);
+  //border-top: 6px solid darken($color-primary, 30%);
+  padding-top: 12%;
+  padding-bottom: 24%;
+  clip-path: polygon(0 0, 100% 0, calc(100% + 5vw) 100%, 0 calc(100% - 5vw));
+
+  @media all and (min-width: 540px) {
+    padding-top: 8%;
+    padding-bottom: 16%;
+  }
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media all and (min-width: 540px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.logo {
+  margin-bottom: 1rem;
+  @media all and (min-width: 540px) {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.search-wrapper {
+  flex-grow: 1;
+}

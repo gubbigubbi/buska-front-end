@@ -1,0 +1,26 @@
+.page-container {
+  border-radius: 7px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  margin-top: -12%;
+  margin-bottom: 6%;
+  @media all and (min-width: 540px) {
+    margin-top: -12%;
+  }
+  position: relative;
+  z-index: 4;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+
+.page-container__footer {
+  margin: 2rem -2rem -2rem -2rem;
+  background-color: rgba(#cacaca, 0.2);
+  border-top: 1px solid rgba(#cacaca, 0.1);
+  padding: 2rem;
+}

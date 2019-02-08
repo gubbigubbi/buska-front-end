@@ -1,21 +1,20 @@
 @import 'sass/variables';
 @import 'sass/reset';
 @import 'sass/spacing';
+
 @import 'sass/antd';
+@import 'sass/fonts';
 
-header {
-  background: $color-primary;
-  background: linear-gradient(
-    132deg,
-    darken($color-primary, 10%) 0%,
-    lighten($color-primary, 10%) 100%
-  );
-}
+@import 'sass/header';
+@import 'sass/content';
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1024px;
-}
-
+@import 'sass/buttons';
 @import 'sass/search';
+
+@import 'sass/meta';
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@import 'sass/nprogress';

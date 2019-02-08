@@ -1,0 +1,111 @@
+.button-group {
+  display: flex;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  > * {
+    border: 5px solid transparent; // hack until chrome supports grid gap
+  }
+}
+
+.button {
+  background: transparent;
+  &:active,
+  &:focus {
+    outline: none;
+  }
+  line-height: 1.499;
+  font-weight: 400;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: pre-line;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 2rem;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+}
+
+.button__primary {
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  color: $color-primary;
+  background-color: transparent;
+  border-color: $color-primary;
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.045);
+    transform: matrix(1, 0, 0, 1, 0, -2);
+  }
+}
+
+.has-badge {
+  display: flex !important;
+  align-items: center;
+}
+
+.badge {
+  font-size: 9px;
+  display: inline-flex !important;
+  margin-left: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -3px;
+
+  &.badge__primary {
+    background-color: $color-primary;
+    color: #fff;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+  }
+
+  &.badge__light {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 2px;
+  }
+
+  &.is-at-top {
+    top: -7px;
+  }
+
+  &.is-at-bottom {
+    bottom: -8px;
+    right: -4px;
+  }
+}
+
+.vote-button {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.vote-score {
+  font-weight: 700;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.vote-action {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &:hover,
+  &.active {
+    color: $color-primary;
+  }
+}

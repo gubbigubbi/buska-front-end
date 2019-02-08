@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "routes": [
+    {
+      "src": "/category/(?<id>[^/]+)$",
+      "dest": "/categoy?id=$id"
+    },
+    {
+      "src": "/answer/(?<id>[^/]+)$",
+      "dest": "/answer?id=$id"
+    }
+  ]
+}

@@ -16,12 +16,16 @@ const Index = () => (
       <h2 className="text-center m-b-lg">Pick from the topics below:</h2>
       <AnswerCategories />
 
-      <div className="text-center subheading m-t-llg m-b-xs">Coming soon:</div>
-      <ul className="text-center text-small">
-        <li>Feedback for each answer</li>
-        <li>Comments on each answer</li>
-        <li>More speed!</li>
-      </ul>
+      <footer>
+        <div className="text-center subheading m-b-xs">Coming soon:</div>
+        <ul className="text-center text-small">
+          <li>
+            <del>Feedback for each answer</del>
+          </li>
+          <li>Comments on each answer</li>
+          <li>More speed!</li>
+        </ul>
+      </footer>
     </Page>
   </>
 );

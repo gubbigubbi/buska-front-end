@@ -27,7 +27,7 @@ const Answer = props => (
 
     <Page>
       <section className="answer-header">
-        <VoteButton />
+        <VoteButton rating={props.answer.rating} id={props.answer.id} />
         <h1 className="m-b-xs answer-title">{props.answer.title}</h1>
         <div className="author-meta m-b-md">
           <img
@@ -54,16 +54,18 @@ Answer.getInitialProps = async function(context) {
   const res = await fetch(`https://api.buska.com.au/wp-json/wp/v2/posts/${id}`);
   const data = await res.json();
 
-  console.log(data);
+  const date = new Date(data.date);
 
   const result = {
+    id: data.id,
     title: data.title.rendered,
     content: data.content.rendered,
     excerpt: data.excerpt.rendered,
-    date: data.date,
+    date: date.toLocaleDateString(),
     author_name: data.author_meta.user_nicename,
     author_avatar: data.author_meta.avatar,
     categories: data.categories,
+    rating: data.acf.rating ? data.acf.rating : 0,
   };
 
   return {

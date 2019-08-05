@@ -53,9 +53,13 @@ class SearchForm extends React.Component {
   render() {
     const { dataSource, isLoading } = this.state;
 
-    const options = dataSource.map(option => (
-      <Option key={option.id} value={option.title} className="show-all">
-        <Link href={`/answer?id=${option.id}`} as={`/answer/${option.id}`}>
+    const options = dataSource.map((option, index) => (
+      <Option key={index} value={option.title} className="show-all">
+        <Link
+          href={`/answer?id=${option.id}`}
+          as={`/answer/${option.id}`}
+          prefetch={index === 0}
+        >
           <a>{option.title}</a>
         </Link>
       </Option>

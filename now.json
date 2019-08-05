@@ -1,13 +1,14 @@
 {
   "version": 2,
   "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "alias": "buska.now.sh",
   "routes": [
     {
-      "src": "/category/(?<id>[^/]+)$",
-      "dest": "/categoy?id=$id"
+      "src": "/category/(?<id>.+)",
+      "dest": "/category?id=$id"
     },
     {
-      "src": "/answer/(?<id>[^/]+)$",
+      "src": "^/answer/(?<id>.+)",
       "dest": "/answer?id=$id"
     }
   ]

@@ -1,17 +1,18 @@
 import Link from 'next/link';
+import Spin from 'antd/lib/spin';
 
 class AnswerCategories extends React.Component {
   state = {
     categories: [],
-    isLoading: false,
+    isLoading: true,
   };
 
   componentDidMount() {
     const { categories } = this.props;
 
     const _ENPOINT = categories
-      ? `https://api.buska.com.au/wp-json/wp/v2/categories?include=${categories}`
-      : 'https://api.buska.com.au/wp-json/wp/v2/categories';
+      ? `https://api.buska.com.au/wp-json/wp/v2/categories?include=${categories}&per_page=12`
+      : 'https://api.buska.com.au/wp-json/wp/v2/categories?per_page=12&parent=0';
 
     fetch(_ENPOINT) // Call the fetch function passing the url of the API as a parameter
       .then(resp => resp.json())
@@ -25,11 +26,15 @@ class AnswerCategories extends React.Component {
 
         this.setState({
           categories: !results ? [] : results,
-          isLoading: false,
         });
       })
       .catch(function() {
         // This is where you run code if the server returns any errors
+      })
+      .finally(() => {
+        this.setState({
+          isLoading: false,
+        });
       });
   }
 
@@ -53,7 +58,11 @@ class AnswerCategories extends React.Component {
     ));
 
     return (
-      <section className="categories-container button-group">{options}</section>
+      <Spin tip="counting chickens 🐣🐥🐔..." spinning={isLoading}>
+        <section className="categories-container button-group">
+          {options}
+        </section>
+      </Spin>
     );
   }
 }
